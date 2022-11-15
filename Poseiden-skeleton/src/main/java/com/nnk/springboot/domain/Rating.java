@@ -8,5 +8,15 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "rating")
 public class Rating {
+    private Long id;
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Id
+    public Long getId() {
+        return id;
+    }
     // TODO: Map columns in data table RATING with corresponding java fields
 }

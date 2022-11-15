@@ -7,5 +7,15 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "rulename")
 public class RuleName {
+    private Long id;
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Id
+    public Long getId() {
+        return id;
+    }
     // TODO: Map columns in data table RULENAME with corresponding java fields
 }
