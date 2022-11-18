@@ -2,6 +2,7 @@ package com.nnk.springboot.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "users")
@@ -11,7 +12,11 @@ public class User {
     private Integer id;
     @NotBlank(message = "Username is mandatory")
     private String username;
+
+
     @NotBlank(message = "Password is mandatory")
+    //TODO REGLER LE PROBLEME
+    @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$", message = "Au moins une lettre majuscule, au moins 8 caractères, au moins un chiffre et un symbole")
     private String password;
     @NotBlank(message = "FullName is mandatory")
     private String fullname;

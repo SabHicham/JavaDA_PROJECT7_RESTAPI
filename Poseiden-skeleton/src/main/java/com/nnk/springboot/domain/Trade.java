@@ -8,14 +8,14 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "trade")
 public class Trade {
-    private Long id;
+    private Integer id;
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
     @Id
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
     // TODO: Map columns in data table TRADE with corresponding java fields
