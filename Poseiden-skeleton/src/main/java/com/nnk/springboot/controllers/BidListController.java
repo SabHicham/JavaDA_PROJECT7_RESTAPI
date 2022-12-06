@@ -4,6 +4,8 @@ import com.nnk.springboot.domain.BidList;
 import com.nnk.springboot.repositories.BidListRepository;
 import com.nnk.springboot.repositories.UserRepository;
 import com.nnk.springboot.service.BidListService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,9 +18,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.validation.Valid;
 
 
+
 @Controller
 public class BidListController {
-
+    private static final Logger logger = LogManager.getLogger(BidListController.class);
     @Autowired
     private BidListService bidListService;
 
@@ -28,6 +31,7 @@ public class BidListController {
 
 
         model.addAttribute("bidLists", bidListService.findBidList());
+        logger.info("consultation");
 
         return "bidList/list";
     }
@@ -49,27 +53,32 @@ public class BidListController {
 
     @GetMapping("/bidList/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
-        // TODO: get Bid by Id and to model then show to the form
+
         model.addAttribute("bidList", bidListService.findById(id));
 
+        logger.info("affichage de bidList id:{}", id);
         return "bidList/update";
     }
 
     @PostMapping("/bidList/update/{id}")
     public String updateBid(@PathVariable("id") Integer id, @Valid BidList bidList,
                              BindingResult result, Model model) {
-        // TODO: check required fields, if valid call service to update Bid and return list Bid
+
         bidList.setId(id);
         bidListService.save(bidList);
+        //TODO: VERIFICATION ATTRIBUT
         model.addAttribute("curves", bidListService.findBidList());
+
+        logger.info("modification bidList id:{}", id);
 
         return "redirect:/bidList/list";
     }
 
     @GetMapping("/bidList/delete/{id}")
     public String deleteBid(@PathVariable("id") Integer id, Model model) {
-        // TODO: Find Bid by Id and delete the bid, return to Bid list
+
         bidListService.deleteById(id);
+        logger.info("suppression bidList id:{}", id);
 
         return "redirect:/bidList/list";
     }

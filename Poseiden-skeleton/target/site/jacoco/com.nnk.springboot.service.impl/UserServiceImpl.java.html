@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-skeleton</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.service.impl</a> &gt; <span class="el_source">UserServiceImpl.java</span></div><h1>UserServiceImpl.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.service.impl;
+
+import com.nnk.springboot.controllers.BidListController;
+import com.nnk.springboot.domain.User;
+import com.nnk.springboot.repositories.UserRepository;
+import com.nnk.springboot.service.UserService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
+import java.util.ArrayList;
+
+
+@Service
+@Transactional
+<span class="fc" id="L23">public class UserServiceImpl implements UserService {</span>
+<span class="fc" id="L24">    private static final Logger logger = LogManager.getLogger(BidListController.class);</span>
+    @Autowired
+    public UserRepository userRepository;
+
+    @Autowired
+    public BCryptPasswordEncoder passwordEncoder;
+
+
+
+    @Override
+    public User findUser() {
+<span class="nc" id="L35">        return findUser(SecurityContextHolder.getContext());</span>
+    }
+
+    @Override
+    public User findUser(SecurityContext securityContext) {
+<span class="nc" id="L40">        String username = securityContext.getAuthentication().getName();</span>
+<span class="nc" id="L41">        return userRepository.findByUsername(username);</span>
+    }
+
+    @Override
+    public User createUser(User user) {
+<span class="nc" id="L46">        logger.info(&quot;enregistrement de l'objet user{}&quot;, user);</span>
+
+<span class="nc" id="L48">        User user1 = userRepository.findByUsername(user.getUsername());</span>
+<span class="nc bnc" id="L49" title="All 2 branches missed.">        if (user1 == null) {</span>
+<span class="nc" id="L50">            logger.info(&quot;utilisateur enregistrer avec succès&quot;);</span>
+<span class="nc" id="L51">            return userRepository.save(user);</span>
+        } else {
+<span class="nc" id="L53">            logger.warn(&quot;l'utilisateur existe deja&quot;);</span>
+
+<span class="nc" id="L55">            return user1;</span>
+
+        }
+
+    }
+
+
+    @Override
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+
+<span class="nc" id="L65">        User user = userRepository.findByUsername(email);</span>
+<span class="nc bnc" id="L66" title="All 2 branches missed.">        if (user == null) {</span>
+<span class="nc" id="L67">            logger.error(&quot;utilisateur introuvable&quot;);</span>
+<span class="nc" id="L68">            throw new UsernameNotFoundException(&quot;Invalid username or password.&quot;);</span>
+        }
+<span class="nc" id="L70">        return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), new ArrayList&lt;&gt;());</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

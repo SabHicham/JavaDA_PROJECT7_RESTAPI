@@ -8,6 +8,26 @@ import java.sql.Timestamp;
 @Table(name = "rulename")
 public class RuleName {
     private Integer id;
+    private String name;
+    private String description;
+    private String json;
+    private String template;
+    private String sqlStr;
+    private String sqlPart;
+
+    public RuleName(Integer id, String name, String description, String json, String template, String sqlStr, String sqlPart) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.json = json;
+        this.template = template;
+        this.sqlStr = sqlStr;
+        this.sqlPart = sqlPart;
+    }
+
+    public RuleName() {
+
+    }
 
     public void setId(Integer id) {
         this.id = id;
@@ -16,6 +36,14 @@ public class RuleName {
     @Id
     public Integer getId() {
         return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
     // TODO: Map columns in data table RULENAME with corresponding java fields
 }

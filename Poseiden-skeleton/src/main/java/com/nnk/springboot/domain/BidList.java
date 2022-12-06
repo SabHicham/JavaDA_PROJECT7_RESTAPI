@@ -1,20 +1,37 @@
 package com.nnk.springboot.domain;
 
-import jdk.nashorn.internal.objects.annotations.Getter;
-import org.springframework.beans.factory.annotation.Required;
-
 import javax.persistence.*;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.NotBlank;
-import java.sql.Date;
 import java.sql.Timestamp;
+
 
 @Entity
 @Table(name = "bidlist")
 public class BidList {
-    private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private double quantity;
     private String account;
+    private String type;
+    private Double bidQuantity;
+    private Double askQuantity;
+    private Double bid;
+    private Double ask;
+    private String benchmark;
+    private Timestamp bidListDate;
+    private String commentary;
+    private String security;
+    private String status;
+    private String trader;
+    private String book;
+    private String creationName;
+    private Timestamp creationDate;
+    private String revisionName;
+    private Timestamp revisionDate;
+    private String dealName;
+    private String dealType;
+    private String sourceListId;
+    private String side;
 
     public BidList() {
 
@@ -30,20 +47,18 @@ public class BidList {
 
 
 
-    public BidList(Integer id) {
-        this.id = id;
-    }
+
 
     public BidList(String account_test, String type_test, double quantity) {
         this.quantity = quantity;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    @Id
-    public Integer getId() {
+
+    public int getId() {
         return id;
     }
 
