@@ -6,7 +6,7 @@ import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = &quot;users&quot;)
-<span class="fc" id="L9">public class User {</span>
+public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
@@ -23,44 +23,55 @@ import javax.validation.constraints.Pattern;
     @NotBlank(message = &quot;Role is mandatory&quot;)
     private String role;
 
+<span class="fc" id="L26">    public User() {</span>
+<span class="fc" id="L27">    }</span>
+
+<span class="fc" id="L29">    public User(Integer id, String username, String password, String fullname, String role) {</span>
+<span class="fc" id="L30">        this.id = id;</span>
+<span class="fc" id="L31">        this.username = username;</span>
+<span class="fc" id="L32">        this.password = password;</span>
+<span class="fc" id="L33">        this.fullname = fullname;</span>
+<span class="fc" id="L34">        this.role = role;</span>
+<span class="fc" id="L35">    }</span>
+
     public Integer getId() {
-<span class="nc" id="L27">        return id;</span>
+<span class="nc" id="L38">        return id;</span>
     }
 
     public void setId(Integer id) {
-<span class="nc" id="L31">        this.id = id;</span>
-<span class="nc" id="L32">    }</span>
+<span class="nc" id="L42">        this.id = id;</span>
+<span class="nc" id="L43">    }</span>
 
     public String getUsername() {
-<span class="nc" id="L35">        return username;</span>
+<span class="fc" id="L46">        return username;</span>
     }
 
     public void setUsername(String username) {
-<span class="nc" id="L39">        this.username = username;</span>
-<span class="nc" id="L40">    }</span>
+<span class="nc" id="L50">        this.username = username;</span>
+<span class="nc" id="L51">    }</span>
 
     public String getPassword() {
-<span class="nc" id="L43">        return password;</span>
+<span class="fc" id="L54">        return password;</span>
     }
 
     public void setPassword(String password) {
-<span class="nc" id="L47">        this.password = password;</span>
-<span class="nc" id="L48">    }</span>
+<span class="nc" id="L58">        this.password = password;</span>
+<span class="nc" id="L59">    }</span>
 
     public String getFullname() {
-<span class="nc" id="L51">        return fullname;</span>
+<span class="nc" id="L62">        return fullname;</span>
     }
 
     public void setFullname(String fullname) {
-<span class="nc" id="L55">        this.fullname = fullname;</span>
-<span class="nc" id="L56">    }</span>
+<span class="nc" id="L66">        this.fullname = fullname;</span>
+<span class="nc" id="L67">    }</span>
 
     public String getRole() {
-<span class="nc" id="L59">        return role;</span>
+<span class="nc" id="L70">        return role;</span>
     }
 
     public void setRole(String role) {
-<span class="nc" id="L63">        this.role = role;</span>
-<span class="nc" id="L64">    }</span>
+<span class="nc" id="L74">        this.role = role;</span>
+<span class="nc" id="L75">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

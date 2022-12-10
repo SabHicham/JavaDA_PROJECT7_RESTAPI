@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController
 {
 	@RequestMapping("/")
-	public String home(Model model)
-	{
+	public String home(Model model) {
+		//TODO: LOGGER
 		return "home";
 	}
 
 	@RequestMapping("/admin/home")
-	public String adminHome(Model model)
-	{
+	public String adminHome(Model model) {
+		//TODO: LOGGER
 		return "redirect:/bidList/list";
 	}
 

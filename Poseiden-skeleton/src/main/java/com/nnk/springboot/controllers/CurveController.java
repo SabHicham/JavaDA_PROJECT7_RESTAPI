@@ -1,7 +1,7 @@
 package com.nnk.springboot.controllers;
 
 import com.nnk.springboot.domain.CurvePoint;
-import com.nnk.springboot.repositories.CurvePointRepository;
+import com.nnk.springboot.service.CurvePointService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,12 +24,13 @@ public class CurveController {
 
 
     @Autowired
-    private CurvePointRepository curvePointRepository;
+    private CurvePointService curvePointService;
+
     @RequestMapping("/curvePoint/list")
     public String home(Model model)
     {
-        model.addAttribute("curves", curvePointRepository.findAll());
-        logger.info("affichage de tous les Curvess");
+        model.addAttribute("curves", curvePointService.findAll());
+        logger.info("affichage de tous les Curves");
         return "curvePoint/list";
     }
 
@@ -41,10 +42,10 @@ public class CurveController {
 
     @PostMapping("/curvePoint/validate")
     public String validate(@Valid CurvePoint curvePoint, BindingResult result, Model model) {
-        // TODO: check data valid and save to db, after saving return Curve list
-        curvePointRepository.save(curvePoint);
-        model.addAttribute("curves", curvePointRepository.findAll());
 
+        curvePointService.save(curvePoint);
+        model.addAttribute("curves", curvePointService.findAll());
+        //TODO: A FAIRE
 
         return "curvePoint/add";
     }
@@ -52,7 +53,7 @@ public class CurveController {
     @GetMapping("/curvePoint/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
 
-        model.addAttribute("curve", curvePointRepository.findById(id).get());
+        model.addAttribute("curve", curvePointService.findById(id));
         logger.info("affichage d'un CurvePoint");
 
         return "curvePoint/update";
@@ -62,8 +63,8 @@ public class CurveController {
     public String updateBid(@PathVariable("id") Integer id, @Valid CurvePoint curvePoint,
                              BindingResult result, Model model) {
         curvePoint.setId(id);
-        curvePointRepository.save(curvePoint);
-        model.addAttribute("curves", curvePointRepository.findAll());
+        curvePointService.save(curvePoint);
+        model.addAttribute("curves", curvePointService.findAll());
         logger.info("modification d'un CurvePoint");
 
         return "redirect:/curvePoint/list";
@@ -71,7 +72,7 @@ public class CurveController {
 
     @GetMapping("/curvePoint/delete/{id}")
     public String deleteBid(@PathVariable("id") Integer id, Model model) {
-        curvePointRepository.deleteById(id);
+        curvePointService.deleteById(id);
         logger.info("suppression d'un curvePoint");
 
         return "redirect:/curvePoint/list";

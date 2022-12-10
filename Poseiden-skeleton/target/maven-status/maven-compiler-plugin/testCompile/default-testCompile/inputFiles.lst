@@ -6,6 +6,7 @@
 /Users/hichamazzeddine/Documents/JavaDA_PROJECT7_RESTAPI/Poseiden-skeleton/src/test/java/com/nnk/springboot/controllers/TradeControllerTest.java
 /Users/hichamazzeddine/Documents/JavaDA_PROJECT7_RESTAPI/Poseiden-skeleton/src/test/java/com/nnk/springboot/TradeTests.java
 /Users/hichamazzeddine/Documents/JavaDA_PROJECT7_RESTAPI/Poseiden-skeleton/src/test/java/com/nnk/springboot/RatingTests.java
+/Users/hichamazzeddine/Documents/JavaDA_PROJECT7_RESTAPI/Poseiden-skeleton/src/test/java/com/nnk/springboot/service/impl/UserServiceImplTest.java
 /Users/hichamazzeddine/Documents/JavaDA_PROJECT7_RESTAPI/Poseiden-skeleton/src/test/java/com/nnk/springboot/controllers/RatingControllerTest.java
 /Users/hichamazzeddine/Documents/JavaDA_PROJECT7_RESTAPI/Poseiden-skeleton/src/test/java/com/nnk/springboot/controllers/HomeControllerTest.java
 /Users/hichamazzeddine/Documents/JavaDA_PROJECT7_RESTAPI/Poseiden-skeleton/src/test/java/com/nnk/springboot/BidTests.java

@@ -1,6 +1,8 @@
 package com.nnk.springboot.controllers;
 
 import com.nnk.springboot.repositories.UserRepository;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +13,8 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("app")
 public class LoginController {
 
+    private static final Logger logger = LogManager.getLogger(LoginController.class);
+
     @Autowired
     private UserRepository userRepository;
 
@@ -18,6 +22,7 @@ public class LoginController {
     public ModelAndView login() {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("login");
+        //TODO: A FAIRE
         return mav;
     }
 
@@ -26,6 +31,8 @@ public class LoginController {
         ModelAndView mav = new ModelAndView();
         mav.addObject("users", userRepository.findAll());
         mav.setViewName("user/list");
+        //TODO: VERIFIER
+        logger.info("affichage de tous les users");
         return mav;
     }
 
@@ -35,6 +42,8 @@ public class LoginController {
         String errorMessage= "You are not authorized for the requested data.";
         mav.addObject("errorMsg", errorMessage);
         mav.setViewName("403");
+        //TODO: VERIFIER
+        logger.error("requête non autorisée");
         return mav;
     }
 }

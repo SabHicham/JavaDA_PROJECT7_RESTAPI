@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 <span class="fc" id="L8">public class HomeController</span>
 {
 	@RequestMapping(&quot;/&quot;)
-	public String home(Model model)
-	{
+	public String home(Model model) {
+		//TODO: LOGGER
 <span class="nc" id="L13">		return &quot;home&quot;;</span>
 	}
 
 	@RequestMapping(&quot;/admin/home&quot;)
-	public String adminHome(Model model)
-	{
+	public String adminHome(Model model) {
+		//TODO: LOGGER
 <span class="nc" id="L19">		return &quot;redirect:/bidList/list&quot;;</span>
 	}
 

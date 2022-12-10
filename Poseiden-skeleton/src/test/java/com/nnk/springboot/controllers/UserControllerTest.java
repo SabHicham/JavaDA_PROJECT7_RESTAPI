@@ -34,6 +34,10 @@ class UserControllerTest {
     @MockBean
     private UserService userservice;
 
+    @Mock
+    private User user;
+
+
 
 
     @Autowired
