@@ -13,8 +13,10 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
-import static org.mockito.Mockito.when;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 public class TradeServiceImplTest extends TestCase {
@@ -43,11 +45,18 @@ public class TradeServiceImplTest extends TestCase {
     @Test
     public void testSave() {
         tradeService.save(new Trade());
+        verify(tradeRepository, times(1)).save(any());
     }
-
+    @Test
     public void testFindById() {
+
+        when(tradeRepository.findById(any())).thenReturn(Optional.of(new Trade()));
+        assertNotNull(tradeService.findById(1));
     }
 
     public void testDeleteById() {
+
+        tradeService.deleteById(1);
+        verify(tradeRepository, times(1)).deleteById(1);
     }
 }

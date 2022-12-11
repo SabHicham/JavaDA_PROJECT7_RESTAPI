@@ -15,24 +15,24 @@ import java.util.List;
 
     @Override
     public List&lt;RuleName&gt; findAll() {
-<span class="nc" id="L18">        List&lt;RuleName&gt; ruleNames = ruleNameRepository.findAll();</span>
-<span class="nc" id="L19">        return ruleNames;</span>
+<span class="fc" id="L18">        List&lt;RuleName&gt; ruleNames = ruleNameRepository.findAll();</span>
+<span class="fc" id="L19">        return ruleNames;</span>
     }
 
     @Override
     public void save(RuleName ruleName) {
-<span class="nc" id="L24">        ruleNameRepository.save(ruleName);</span>
+<span class="fc" id="L24">        ruleNameRepository.save(ruleName);</span>
 
-<span class="nc" id="L26">    }</span>
+<span class="fc" id="L26">    }</span>
 
     @Override
     public RuleName findById(Integer id) {
-<span class="nc" id="L30">        return ruleNameRepository.findById(id).get();</span>
+<span class="fc" id="L30">        return ruleNameRepository.findById(id).get();</span>
     }
 
     @Override
     public void deleteById(Integer id) {
-<span class="nc" id="L35">        ruleNameRepository.deleteById(id);</span>
-<span class="nc" id="L36">    }</span>
+<span class="fc" id="L35">        ruleNameRepository.deleteById(id);</span>
+<span class="fc" id="L36">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

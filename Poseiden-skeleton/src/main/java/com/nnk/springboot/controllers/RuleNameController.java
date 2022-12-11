@@ -1,8 +1,6 @@
 package com.nnk.springboot.controllers;
 
 import com.nnk.springboot.domain.RuleName;
-import com.nnk.springboot.repositories.CurvePointRepository;
-import com.nnk.springboot.repositories.RuleNameRepository;
 import com.nnk.springboot.service.RuleNameService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

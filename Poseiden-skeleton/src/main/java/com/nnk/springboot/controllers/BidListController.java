@@ -1,8 +1,6 @@
 package com.nnk.springboot.controllers;
 
 import com.nnk.springboot.domain.BidList;
-import com.nnk.springboot.repositories.BidListRepository;
-import com.nnk.springboot.repositories.UserRepository;
 import com.nnk.springboot.service.BidListService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -67,7 +65,7 @@ public class BidListController {
         bidList.setId(id);
         bidListService.save(bidList);
         //TODO: VERIFICATION ATTRIBUT
-        model.addAttribute("curves", bidListService.findBidList());
+        model.addAttribute("bidLists", bidListService.findBidList());
 
         logger.info("modification bidList id:{}", id);
 

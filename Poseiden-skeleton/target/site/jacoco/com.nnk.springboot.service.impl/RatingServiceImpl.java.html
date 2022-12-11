@@ -16,24 +16,24 @@ import java.util.List;
 
     @Override
     public List&lt;Rating&gt; findAll() {
-<span class="nc" id="L19">        List&lt;Rating&gt; ratings = ratingRepository.findAll();</span>
-<span class="nc" id="L20">        return ratings;</span>
+<span class="fc" id="L19">        List&lt;Rating&gt; ratings = ratingRepository.findAll();</span>
+<span class="fc" id="L20">        return ratings;</span>
     }
 
     @Override
     public void save(Rating rating) {
-<span class="nc" id="L25">        ratingRepository.save(rating);</span>
+<span class="fc" id="L25">        ratingRepository.save(rating);</span>
 
-<span class="nc" id="L27">    }</span>
+<span class="fc" id="L27">    }</span>
 
     @Override
     public Rating findById(Integer id) {
-<span class="nc" id="L31">        return ratingRepository.findById(id).get();</span>
+<span class="fc" id="L31">        return ratingRepository.findById(id).get();</span>
     }
 
     @Override
     public void deleteById(Integer id) {
-<span class="nc" id="L36">        ratingRepository.deleteById(id);</span>
-<span class="nc" id="L37">    }</span>
+<span class="fc" id="L36">        ratingRepository.deleteById(id);</span>
+<span class="fc" id="L37">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

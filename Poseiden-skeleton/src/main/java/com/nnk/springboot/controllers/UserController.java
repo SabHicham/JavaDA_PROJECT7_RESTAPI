@@ -5,8 +5,6 @@ import com.nnk.springboot.repositories.UserRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,8 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
-import java.util.Collections;
-import java.util.Map;
+
 
 @Controller
 public class UserController {
@@ -26,6 +23,10 @@ public class UserController {
     private static final Logger logger = LogManager.getLogger(UserController.class);
     @Autowired
     private UserRepository userRepository;
+
+    private  BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+
+
 
     @RequestMapping("/user/list")
     public String home(Model model) {
@@ -43,7 +44,7 @@ public class UserController {
     @PostMapping("/user/validate")
     public String validate(@Valid User user, BindingResult result, Model model) {
         if (!result.hasErrors()) {
-            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+
             user.setPassword(encoder.encode(user.getPassword()));
             userRepository.save(user);
             //TODO: RÉSOUDRE LE PROBLÉME
@@ -70,7 +71,6 @@ public class UserController {
             return "user/update";
         }
 
-        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         user.setPassword(encoder.encode(user.getPassword()));
         user.setId(id);
         userRepository.save(user);
@@ -89,5 +89,8 @@ public class UserController {
     }
 
 
+    public void setEncoder(BCryptPasswordEncoder encoder) {
+        this.encoder = encoder;
+    }
 }
 

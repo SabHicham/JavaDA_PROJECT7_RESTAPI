@@ -1,8 +1,11 @@
+/Users/hichamazzeddine/Documents/JavaDA_PROJECT7_RESTAPI/Poseiden-skeleton/src/test/java/com/nnk/springboot/service/impl/BidListServiceImplTest.java
 /Users/hichamazzeddine/Documents/JavaDA_PROJECT7_RESTAPI/Poseiden-skeleton/src/test/java/com/nnk/springboot/controllers/BidListControllerTest.java
 /Users/hichamazzeddine/Documents/JavaDA_PROJECT7_RESTAPI/Poseiden-skeleton/src/test/java/com/nnk/springboot/RuleTests.java
 /Users/hichamazzeddine/Documents/JavaDA_PROJECT7_RESTAPI/Poseiden-skeleton/src/test/java/com/nnk/springboot/controllers/RuleNameControllerTest.java
 /Users/hichamazzeddine/Documents/JavaDA_PROJECT7_RESTAPI/Poseiden-skeleton/src/test/java/com/nnk/springboot/controllers/LoginControllerTest.java
+/Users/hichamazzeddine/Documents/JavaDA_PROJECT7_RESTAPI/Poseiden-skeleton/src/test/java/com/nnk/springboot/service/impl/RatingServiceImplTest.java
 /Users/hichamazzeddine/Documents/JavaDA_PROJECT7_RESTAPI/Poseiden-skeleton/src/test/java/com/nnk/springboot/controllers/UserControllerTest.java
+/Users/hichamazzeddine/Documents/JavaDA_PROJECT7_RESTAPI/Poseiden-skeleton/src/test/java/com/nnk/springboot/service/impl/TradeServiceImplTest.java
 /Users/hichamazzeddine/Documents/JavaDA_PROJECT7_RESTAPI/Poseiden-skeleton/src/test/java/com/nnk/springboot/controllers/TradeControllerTest.java
 /Users/hichamazzeddine/Documents/JavaDA_PROJECT7_RESTAPI/Poseiden-skeleton/src/test/java/com/nnk/springboot/TradeTests.java
 /Users/hichamazzeddine/Documents/JavaDA_PROJECT7_RESTAPI/Poseiden-skeleton/src/test/java/com/nnk/springboot/RatingTests.java
@@ -13,3 +16,5 @@
 /Users/hichamazzeddine/Documents/JavaDA_PROJECT7_RESTAPI/Poseiden-skeleton/src/test/java/com/nnk/springboot/controllers/CurveControllerTest.java
 /Users/hichamazzeddine/Documents/JavaDA_PROJECT7_RESTAPI/Poseiden-skeleton/src/test/java/com/nnk/springboot/CurvePointTests.java
 /Users/hichamazzeddine/Documents/JavaDA_PROJECT7_RESTAPI/Poseiden-skeleton/src/test/java/com/nnk/springboot/PasswordEncodeTest.java
+/Users/hichamazzeddine/Documents/JavaDA_PROJECT7_RESTAPI/Poseiden-skeleton/src/test/java/com/nnk/springboot/service/impl/RuleNameServiceImplTest.java
+/Users/hichamazzeddine/Documents/JavaDA_PROJECT7_RESTAPI/Poseiden-skeleton/src/test/java/com/nnk/springboot/service/impl/CurvePointServiceImplTest.java

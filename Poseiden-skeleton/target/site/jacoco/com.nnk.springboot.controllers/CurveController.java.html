@@ -29,53 +29,53 @@ import javax.validation.Valid;
     @RequestMapping(&quot;/curvePoint/list&quot;)
     public String home(Model model)
     {
-<span class="nc" id="L32">        model.addAttribute(&quot;curves&quot;, curvePointService.findAll());</span>
-<span class="nc" id="L33">        logger.info(&quot;affichage de tous les Curves&quot;);</span>
-<span class="nc" id="L34">        return &quot;curvePoint/list&quot;;</span>
+<span class="fc" id="L32">        model.addAttribute(&quot;curves&quot;, curvePointService.findAll());</span>
+<span class="fc" id="L33">        logger.info(&quot;affichage de tous les Curves&quot;);</span>
+<span class="fc" id="L34">        return &quot;curvePoint/list&quot;;</span>
     }
 
     @GetMapping(&quot;/curvePoint/add&quot;)
     public String addBidForm(CurvePoint bid) {
-<span class="nc" id="L39">        logger.info(&quot;affichage page d'ajout curve&quot;);</span>
-<span class="nc" id="L40">        return &quot;curvePoint/add&quot;;</span>
+<span class="fc" id="L39">        logger.info(&quot;affichage page d'ajout curve&quot;);</span>
+<span class="fc" id="L40">        return &quot;curvePoint/add&quot;;</span>
     }
 
     @PostMapping(&quot;/curvePoint/validate&quot;)
     public String validate(@Valid CurvePoint curvePoint, BindingResult result, Model model) {
 
-<span class="nc" id="L46">        curvePointService.save(curvePoint);</span>
-<span class="nc" id="L47">        model.addAttribute(&quot;curves&quot;, curvePointService.findAll());</span>
+<span class="fc" id="L46">        curvePointService.save(curvePoint);</span>
+<span class="fc" id="L47">        model.addAttribute(&quot;curves&quot;, curvePointService.findAll());</span>
         //TODO: A FAIRE
 
-<span class="nc" id="L50">        return &quot;curvePoint/add&quot;;</span>
+<span class="fc" id="L50">        return &quot;curvePoint/add&quot;;</span>
     }
 
     @GetMapping(&quot;/curvePoint/update/{id}&quot;)
     public String showUpdateForm(@PathVariable(&quot;id&quot;) Integer id, Model model) {
 
-<span class="nc" id="L56">        model.addAttribute(&quot;curve&quot;, curvePointService.findById(id));</span>
-<span class="nc" id="L57">        logger.info(&quot;affichage d'un CurvePoint&quot;);</span>
+<span class="fc" id="L56">        model.addAttribute(&quot;curve&quot;, curvePointService.findById(id));</span>
+<span class="fc" id="L57">        logger.info(&quot;affichage d'un CurvePoint&quot;);</span>
 
-<span class="nc" id="L59">        return &quot;curvePoint/update&quot;;</span>
+<span class="fc" id="L59">        return &quot;curvePoint/update&quot;;</span>
     }
 
     @PostMapping(&quot;/curvePoint/update/{id}&quot;)
     public String updateBid(@PathVariable(&quot;id&quot;) Integer id, @Valid CurvePoint curvePoint,
                              BindingResult result, Model model) {
-<span class="nc" id="L65">        curvePoint.setId(id);</span>
-<span class="nc" id="L66">        curvePointService.save(curvePoint);</span>
-<span class="nc" id="L67">        model.addAttribute(&quot;curves&quot;, curvePointService.findAll());</span>
-<span class="nc" id="L68">        logger.info(&quot;modification d'un CurvePoint&quot;);</span>
+<span class="fc" id="L65">        curvePoint.setId(id);</span>
+<span class="fc" id="L66">        curvePointService.save(curvePoint);</span>
+<span class="fc" id="L67">        model.addAttribute(&quot;curves&quot;, curvePointService.findAll());</span>
+<span class="fc" id="L68">        logger.info(&quot;modification d'un CurvePoint&quot;);</span>
 
-<span class="nc" id="L70">        return &quot;redirect:/curvePoint/list&quot;;</span>
+<span class="fc" id="L70">        return &quot;redirect:/curvePoint/list&quot;;</span>
     }
 
     @GetMapping(&quot;/curvePoint/delete/{id}&quot;)
     public String deleteBid(@PathVariable(&quot;id&quot;) Integer id, Model model) {
-<span class="nc" id="L75">        curvePointService.deleteById(id);</span>
-<span class="nc" id="L76">        logger.info(&quot;suppression d'un curvePoint&quot;);</span>
+<span class="fc" id="L75">        curvePointService.deleteById(id);</span>
+<span class="fc" id="L76">        logger.info(&quot;suppression d'un curvePoint&quot;);</span>
 
-<span class="nc" id="L78">        return &quot;redirect:/curvePoint/list&quot;;</span>
+<span class="fc" id="L78">        return &quot;redirect:/curvePoint/list&quot;;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

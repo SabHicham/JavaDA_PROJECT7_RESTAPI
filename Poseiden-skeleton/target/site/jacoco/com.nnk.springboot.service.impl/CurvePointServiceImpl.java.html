@@ -15,24 +15,24 @@ import java.util.List;
 
     @Override
     public List&lt;CurvePoint&gt; findAll() {
-<span class="nc" id="L18">        List&lt;CurvePoint&gt; curvePoints = curvePointRepository.findAll();</span>
-<span class="nc" id="L19">        return curvePoints;</span>
+<span class="fc" id="L18">        List&lt;CurvePoint&gt; curvePoints = curvePointRepository.findAll();</span>
+<span class="fc" id="L19">        return curvePoints;</span>
     }
 
     @Override
     public void save(CurvePoint curvePoint) {
-<span class="nc" id="L24">        curvePointRepository.save(curvePoint);</span>
+<span class="fc" id="L24">        curvePointRepository.save(curvePoint);</span>
 
-<span class="nc" id="L26">    }</span>
+<span class="fc" id="L26">    }</span>
 
     @Override
     public CurvePoint findById(Integer id) {
-<span class="nc" id="L30">        return curvePointRepository.findById(id).get();</span>
+<span class="fc" id="L30">        return curvePointRepository.findById(id).get();</span>
     }
 
     @Override
     public void deleteById(Integer id) {
-<span class="nc" id="L35">        curvePointRepository.deleteById(id);</span>
-<span class="nc" id="L36">    }</span>
+<span class="fc" id="L35">        curvePointRepository.deleteById(id);</span>
+<span class="fc" id="L36">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

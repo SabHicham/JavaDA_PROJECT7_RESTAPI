@@ -1,5 +1,8 @@
 com/nnk/springboot/BidTests.class
+com/nnk/springboot/service/impl/BidListServiceImplTest.class
+com/nnk/springboot/service/impl/CurvePointServiceImplTest.class
 com/nnk/springboot/controllers/HomeControllerTest.class
+com/nnk/springboot/service/impl/RatingServiceImplTest.class
 com/nnk/springboot/controllers/RuleNameControllerTest.class
 com/nnk/springboot/PasswordEncodeTest.class
 com/nnk/springboot/TradeTests.class

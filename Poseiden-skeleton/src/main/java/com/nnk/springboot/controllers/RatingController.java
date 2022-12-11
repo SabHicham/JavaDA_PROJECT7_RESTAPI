@@ -1,8 +1,6 @@
 package com.nnk.springboot.controllers;
 
 import com.nnk.springboot.domain.Rating;
-import com.nnk.springboot.repositories.RatingRepository;
-import com.nnk.springboot.repositories.UserRepository;
 import com.nnk.springboot.service.RatingService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
