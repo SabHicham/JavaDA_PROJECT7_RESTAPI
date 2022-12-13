@@ -45,5 +45,5 @@ public class RuleName {
     public void setName(String name) {
         this.name = name;
     }
-    // TODO: Map columns in data table RULENAME with corresponding java fields
+
 }

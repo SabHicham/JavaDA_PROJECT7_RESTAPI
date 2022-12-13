@@ -64,7 +64,6 @@ public class BidListController {
 
         bidList.setId(id);
         bidListService.save(bidList);
-        //TODO: VERIFICATION ATTRIBUT
         model.addAttribute("bidLists", bidListService.findBidList());
 
         logger.info("modification bidList id:{}", id);

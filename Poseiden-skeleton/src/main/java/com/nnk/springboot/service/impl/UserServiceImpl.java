@@ -1,6 +1,7 @@
 package com.nnk.springboot.service.impl;
 
 import com.nnk.springboot.controllers.BidListController;
+import com.nnk.springboot.domain.BidList;
 import com.nnk.springboot.domain.User;
 import com.nnk.springboot.repositories.UserRepository;
 import com.nnk.springboot.service.UserService;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.List;
 
 
 @Service
@@ -29,8 +31,6 @@ public class UserServiceImpl implements UserService {
     public BCryptPasswordEncoder passwordEncoder;
 
 
-
-
     @Override
     public User findUser() {
         return findUser(SecurityContextHolder.getContext());
@@ -42,7 +42,7 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByUsername(username);
     }
 
-    @Override
+   /* @Override
     public User createUser(User user) {
         logger.info("enregistrement de l'objet user{}", user);
 
@@ -57,7 +57,7 @@ public class UserServiceImpl implements UserService {
 
         }
 
-    }
+    }*/
 
 
     @Override
@@ -69,5 +69,26 @@ public class UserServiceImpl implements UserService {
             throw new UsernameNotFoundException("Invalid username or password.");
         }
         return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), new ArrayList<>());
+    }
+
+    @Override
+    public User findById(Integer id) {
+        return userRepository.findById(id).get();
+    }
+
+    @Override
+    public void save(User user) {
+        userRepository.save(user);
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        userRepository.deleteById(id);
+    }
+
+    @Override
+    public List<User> findUserList() {
+        List<User> users = userRepository.findAll();
+        return users;
     }
 }

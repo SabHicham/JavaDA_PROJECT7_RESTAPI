@@ -43,7 +43,6 @@ public class RuleNameController {
 
         ruleNameService.save(ruleName);
         model.addAttribute("ruleNames", ruleNameService.findAll());
-        //TODO: A FAIRE
 
         return "ruleName/add";
     }

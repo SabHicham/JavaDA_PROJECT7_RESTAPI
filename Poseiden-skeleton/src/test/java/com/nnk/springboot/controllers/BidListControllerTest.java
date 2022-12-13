@@ -66,7 +66,7 @@ public class BidListControllerTest extends TestCase {
        assertEquals("bidList/update", retour);
     }
 
-    //TODO: A FAIRE
+
     /*@Test
     public void testUpdateBid() {
         String retour = bidListController.updateBid(null, new BidList(), null, model );

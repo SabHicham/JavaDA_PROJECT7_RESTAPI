@@ -69,5 +69,5 @@ public class BidList {
     public void setAccount(String account) {
         this.account = account;
     }
-    // TODO: Map columns in data table BIDLIST with corresponding java fields
+
 }

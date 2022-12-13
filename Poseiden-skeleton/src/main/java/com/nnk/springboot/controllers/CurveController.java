@@ -45,7 +45,6 @@ public class CurveController {
 
         curvePointService.save(curvePoint);
         model.addAttribute("curves", curvePointService.findAll());
-        //TODO: A FAIRE
 
         return "curvePoint/add";
     }

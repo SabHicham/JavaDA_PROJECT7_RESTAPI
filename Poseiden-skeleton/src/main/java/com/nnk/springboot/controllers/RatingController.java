@@ -25,7 +25,6 @@ public class RatingController {
     public String home(Model model)
     {
         model.addAttribute("ratings", ratingService.findAll());
-        //TODO: VERIFIER
         logger.info("affichage de tous les Ratings");
 
         return "rating/list";
@@ -33,7 +32,6 @@ public class RatingController {
 
     @GetMapping("/rating/add")
     public String addRatingForm(Rating rating) {
-        //TODO: VERIFIER
         logger.info("affichage page d'ajout rating");
         return "rating/add";
     }
@@ -43,7 +41,7 @@ public class RatingController {
 
         ratingService.save(rating);
         model.addAttribute("ratings", ratingService.findAll());
-        //TODO: A FAIRE
+
 
         return "rating/add";
     }
@@ -52,7 +50,7 @@ public class RatingController {
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
 
         model.addAttribute("rating", ratingService.findById(id));
-        //TODO: A VERIFIER
+
         logger.info("affichage d'un Rating");
 
         return "rating/update";
@@ -65,7 +63,7 @@ public class RatingController {
         rating.setId(id);
         ratingService.save(rating);
         model.addAttribute("ratings", ratingService.findAll());
-        //TODO: A VERIFIER
+
         logger.info("modification d'un Rating");
 
         return "redirect:/rating/list";
@@ -75,7 +73,7 @@ public class RatingController {
     public String deleteRating(@PathVariable("id") Integer id, Model model) {
 
         ratingService.deleteById(id);
-        //TODO: A VERIFIER
+
         logger.info("suppression d'un Rating");
 
 
