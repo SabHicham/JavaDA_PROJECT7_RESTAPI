@@ -1,12 +1,14 @@
 package com.nnk.springboot.service;
 
 import com.nnk.springboot.domain.BidList;
+import com.nnk.springboot.domain.CurvePoint;
+
 
 import java.util.List;
 
 public interface BidListService {
 
-    List<BidList> findBidList ();
+    List<BidList> findAll();
 
     void save(BidList bidList);
 
@@ -14,4 +16,7 @@ public interface BidListService {
     BidList findById(Integer id);
 
     void deleteById(Integer id);
+
+
+
 }

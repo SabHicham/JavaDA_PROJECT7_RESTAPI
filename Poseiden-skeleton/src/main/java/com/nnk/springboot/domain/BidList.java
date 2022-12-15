@@ -10,9 +10,10 @@ public class BidList {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private double quantity;
+
     private String account;
     private String type;
+    @Column(name = "bid_quantity")
     private Double bidQuantity;
     private Double askQuantity;
     private Double bid;
@@ -37,21 +38,13 @@ public class BidList {
 
     }
 
-    public double getQuantity() {
-        return quantity;
+    public BidList(int id, String account, String type, Double bidQuantity) {
+        this.id = id;
+        this.account = account;
+        this.type = type;
+        this.bidQuantity = bidQuantity;
     }
 
-    public void setQuantity(double quantity) {
-        this.quantity = quantity;
-    }
-
-
-
-
-
-    public BidList(String account_test, String type_test, double quantity) {
-        this.quantity = quantity;
-    }
 
     public void setId(int id) {
         this.id = id;
@@ -70,4 +63,19 @@ public class BidList {
         this.account = account;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public Double getBidQuantity() {
+        return bidQuantity;
+    }
+
+    public void setBidQuantity(Double bidQuantity) {
+        this.bidQuantity = bidQuantity;
+    }
 }

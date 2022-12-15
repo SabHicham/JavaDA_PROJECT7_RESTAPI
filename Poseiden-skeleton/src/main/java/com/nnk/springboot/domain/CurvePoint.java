@@ -7,12 +7,21 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "curvepoint")
 public class CurvePoint {
-    private Integer id;
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Integer id=0;
+    private Integer curveId;
     private Timestamp asOfDate;
     private Double term;
     private Double value;
     private Timestamp creationDate;
 
+    public CurvePoint(Integer curveId) {
+        this.curveId = curveId;
+    }
+
+    public CurvePoint() {
+    }
 
 
     public void setId(Integer id) {
@@ -55,5 +64,12 @@ public class CurvePoint {
     public void setCreationDate(Timestamp creationDate) {
         this.creationDate = creationDate;
     }
-    // TODO: Map columns in data table CURVEPOINT with corresponding java fields
+
+    public Integer getCurveId() {
+        return curveId;
+    }
+
+    public void setCurveId(Integer curveId) {
+        this.curveId = curveId;
+    }
 }

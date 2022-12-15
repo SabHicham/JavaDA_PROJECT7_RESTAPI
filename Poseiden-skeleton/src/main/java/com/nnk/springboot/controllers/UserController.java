@@ -44,8 +44,6 @@ public class UserController {
     @PostMapping("/user/validate")
     public String validate(@Valid User user, BindingResult result, Model model) {
 
-
-
             if (!result.hasErrors()) {
                 userService.save(user);
                 return "redirect:/user/list";

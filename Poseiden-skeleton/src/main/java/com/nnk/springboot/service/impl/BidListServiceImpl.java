@@ -1,6 +1,7 @@
 package com.nnk.springboot.service.impl;
 
 import com.nnk.springboot.domain.BidList;
+import com.nnk.springboot.domain.CurvePoint;
 import com.nnk.springboot.repositories.BidListRepository;
 import com.nnk.springboot.service.BidListService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,7 @@ public class BidListServiceImpl implements BidListService {
     public BidListRepository bidListRepository;
 
     @Override
-    public List<BidList> findBidList() {
+    public List<BidList> findAll() {
         List<BidList> bidLists = bidListRepository.findAll();
         return bidLists;
     }

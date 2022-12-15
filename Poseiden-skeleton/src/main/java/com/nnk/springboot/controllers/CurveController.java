@@ -46,7 +46,7 @@ public class CurveController {
         curvePointService.save(curvePoint);
         model.addAttribute("curves", curvePointService.findAll());
 
-        return "curvePoint/add";
+        return "redirect:/curvePoint/list";
     }
 
     @GetMapping("/curvePoint/update/{id}")

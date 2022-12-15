@@ -24,13 +24,9 @@ public class BidListController {
     private BidListService bidListService;
 
     @RequestMapping("/bidList/list")
-    public String home(Model model)
-    {
-
-
-        model.addAttribute("bidLists", bidListService.findBidList());
+    public String home(Model model) {
+        model.addAttribute("bidLists", bidListService.findAll());
         logger.info("consultation");
-
         return "bidList/list";
     }
 
@@ -51,7 +47,6 @@ public class BidListController {
 
     @GetMapping("/bidList/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
-
         model.addAttribute("bidList", bidListService.findById(id));
 
         logger.info("affichage de bidList id:{}", id);
@@ -64,16 +59,13 @@ public class BidListController {
 
         bidList.setId(id);
         bidListService.save(bidList);
-        model.addAttribute("bidLists", bidListService.findBidList());
-
+        model.addAttribute("bidLists", bidListService.findAll());
         logger.info("modification bidList id:{}", id);
-
         return "redirect:/bidList/list";
     }
 
     @GetMapping("/bidList/delete/{id}")
     public String deleteBid(@PathVariable("id") Integer id, Model model) {
-
         bidListService.deleteById(id);
         logger.info("suppression bidList id:{}", id);
 

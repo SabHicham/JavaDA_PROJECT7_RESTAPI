@@ -1,9 +1,8 @@
 package com.nnk.springboot.service.impl;
 
 import com.nnk.springboot.domain.CurvePoint;
-import com.nnk.springboot.domain.Trade;
+
 import com.nnk.springboot.repositories.CurvePointRepository;
-import com.nnk.springboot.repositories.TradeRepository;
 import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
@@ -36,7 +35,7 @@ public class CurvePointServiceImplTest extends TestCase {
     @Test
     public void testFindAll() {
         //given
-        List<CurvePoint> curvePoints = Arrays.asList(new CurvePoint());
+        List<CurvePoint> curvePoints = Arrays.asList(new CurvePoint(1));
         when(curvePointRepository.findAll()).thenReturn(curvePoints);
         //when
         List<CurvePoint> response = curvePointService.findAll();
@@ -45,18 +44,18 @@ public class CurvePointServiceImplTest extends TestCase {
     }
 
     public void testSave() {
-        curvePointService.save(new CurvePoint());
+        curvePointService.save(new CurvePoint(1));
     }
 
     public void testFindById() {
-        CurvePoint curvePoint = new CurvePoint();
-        when(curvePointRepository.findById(any())).thenReturn(Optional.of(new CurvePoint()));
+        CurvePoint curvePoint = new CurvePoint(1);
+        when(curvePointRepository.findById(any())).thenReturn(Optional.of(new CurvePoint(1)));
         curvePointService.findById(1);
         assertEquals(1, 1);
     }
 
     public void testDeleteById() {
-        CurvePoint curvePoint = new CurvePoint();
+        CurvePoint curvePoint = new CurvePoint(1);
         curvePointService.deleteById(1);
         assertEquals(1, 1);
     }

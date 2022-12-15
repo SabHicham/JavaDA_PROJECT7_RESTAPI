@@ -53,7 +53,7 @@ public class CurveControllerTest extends TestCase {
     }
 
     public void testUpdateBid() {
-        String retour = curveController.updateBid(null, new CurvePoint(), null, model);
+        String retour = curveController.updateBid(null, new CurvePoint(1), bindingResult, model);
         assertEquals("redirect:/curvePoint/list", retour);
     }
 
