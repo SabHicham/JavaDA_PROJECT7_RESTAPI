@@ -10,6 +10,7 @@ public class CurvePoint {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id=0;
+    @Column(name = "curve_id")
     private Integer curveId;
     private Timestamp asOfDate;
     private Double term;

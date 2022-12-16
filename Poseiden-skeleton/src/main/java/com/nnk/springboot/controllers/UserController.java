@@ -36,7 +36,7 @@ public class UserController {
     }
 
     @GetMapping("/user/add")
-    public String addUser(User bid) {
+    public String addUser(User user) {
         logger.info("affichage page d'ajout User");
         return "user/add";
     }

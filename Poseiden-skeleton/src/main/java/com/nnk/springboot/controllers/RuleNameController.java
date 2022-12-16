@@ -44,7 +44,7 @@ public class RuleNameController {
         ruleNameService.save(ruleName);
         model.addAttribute("ruleNames", ruleNameService.findAll());
 
-        return "ruleName/add";
+        return "redirect:/ruleName/list";
     }
 
     @GetMapping("/ruleName/update/{id}")
@@ -62,7 +62,7 @@ public class RuleNameController {
 
         ruleName.setId(id);
         ruleNameService.save(ruleName);
-        model.addAttribute("curves", ruleNameService.findAll());
+        model.addAttribute("ruleNames", ruleNameService.findAll());
         logger.info("modification d'un RuleName");
 
         return "redirect:/ruleName/list";

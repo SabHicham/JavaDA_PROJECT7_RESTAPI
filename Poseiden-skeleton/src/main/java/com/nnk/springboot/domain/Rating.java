@@ -9,12 +9,22 @@ import java.sql.Timestamp;
 @Table(name = "rating")
 public class Rating {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(name = "moodys_rating")
     private String moodysRating;
+    @Column(name = "sandprating")
     private String sandPRating;
+    @Column(name = "fitch_rating")
     private String fitchRating;
+    @Column(name = "order_number")
     private int orderNumber;
+
+
+
+    public Rating() {
+    }
+
 
     public Rating(Integer id, String moodysRating, String sandPRating, String fitchRating, int orderNumber) {
         this.id = id;
@@ -24,17 +34,12 @@ public class Rating {
         this.orderNumber = orderNumber;
     }
 
-    public Rating() {
+    public Integer getId() {
+        return id;
     }
-
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    @Id
-    public Integer getId() {
-        return id;
     }
 
     public String getMoodysRating() {
@@ -68,5 +73,4 @@ public class Rating {
     public void setOrderNumber(int orderNumber) {
         this.orderNumber = orderNumber;
     }
-
 }

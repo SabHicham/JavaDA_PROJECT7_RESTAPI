@@ -36,9 +36,9 @@ public class TradeController {
     public String validate(@Valid Trade trade, BindingResult result, Model model) {
 
         tradeService.save(trade);
-        model.addAttribute("curves", tradeService.findAll());
+        model.addAttribute("trades", tradeService.findAll());
 
-        return "trade/add";
+        return "redirect:/trade/list";
     }
 
     @GetMapping("/trade/update/{id}")

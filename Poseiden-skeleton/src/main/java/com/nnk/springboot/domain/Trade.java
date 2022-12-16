@@ -9,7 +9,7 @@ import java.sql.Timestamp;
 @Table(name = "trade")
 public class Trade {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String account;
     private String type;
@@ -34,22 +34,41 @@ public class Trade {
     private String side;
 
 
-    public Trade(String account, String type) {
-        this.account = account;
-        this.type = type;
-    }
-
     public Trade() {
 
     }
 
-    public void setId(Integer id) {
+    public Trade(Integer id, String account, String type, Double buyQuantity, Double sellQuantity, Double buyPrice, Double sellPrice, String benchmark, Timestamp tradeDate, String security, String status, String trader, String book, String creationName, Timestamp creationDate, String revisionName, Timestamp revisionDate, String dealName, String dealType, String sourceListId, String side) {
         this.id = id;
+        this.account = account;
+        this.type = type;
+        this.buyQuantity = buyQuantity;
+        this.sellQuantity = sellQuantity;
+        this.buyPrice = buyPrice;
+        this.sellPrice = sellPrice;
+        this.benchmark = benchmark;
+        this.tradeDate = tradeDate;
+        this.security = security;
+        this.status = status;
+        this.trader = trader;
+        this.book = book;
+        this.creationName = creationName;
+        this.creationDate = creationDate;
+        this.revisionName = revisionName;
+        this.revisionDate = revisionDate;
+        this.dealName = dealName;
+        this.dealType = dealType;
+        this.sourceListId = sourceListId;
+        this.side = side;
     }
 
-    @Id
+
     public Integer getId() {
         return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getAccount() {
@@ -211,5 +230,4 @@ public class Trade {
     public void setSide(String side) {
         this.side = side;
     }
-    // TODO: Map columns in data table TRADE with corresponding java fields
 }

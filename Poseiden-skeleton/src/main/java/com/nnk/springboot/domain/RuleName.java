@@ -17,6 +17,10 @@ public class RuleName {
     private String sqlStr;
     private String sqlPart;
 
+
+    public RuleName() {
+    }
+
     public RuleName(Integer id, String name, String description, String json, String template, String sqlStr, String sqlPart) {
         this.id = id;
         this.name = name;
@@ -27,17 +31,12 @@ public class RuleName {
         this.sqlPart = sqlPart;
     }
 
-    public RuleName() {
-
+    public Integer getId() {
+        return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    @Id
-    public Integer getId() {
-        return id;
     }
 
     public String getName() {

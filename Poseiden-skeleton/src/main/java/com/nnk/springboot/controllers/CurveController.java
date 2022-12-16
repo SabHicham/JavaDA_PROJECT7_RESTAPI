@@ -35,7 +35,7 @@ public class CurveController {
     }
 
     @GetMapping("/curvePoint/add")
-    public String addBidForm(CurvePoint bid) {
+    public String addBidForm(CurvePoint curvePoint) {
         logger.info("affichage page d'ajout curve");
         return "curvePoint/add";
     }
@@ -51,9 +51,8 @@ public class CurveController {
 
     @GetMapping("/curvePoint/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
-
-        model.addAttribute("curve", curvePointService.findById(id));
-        logger.info("affichage d'un CurvePoint");
+        model.addAttribute("curvePoint", curvePointService.findById(id));
+        logger.info("affichage d'un CurvePoint id:{}", id);
 
         return "curvePoint/update";
     }

@@ -42,8 +42,7 @@ public class RatingController {
         ratingService.save(rating);
         model.addAttribute("ratings", ratingService.findAll());
 
-
-        return "rating/add";
+        return "redirect:/rating/list";
     }
 
     @GetMapping("/rating/update/{id}")
